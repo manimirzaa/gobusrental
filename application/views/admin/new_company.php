@@ -335,7 +335,7 @@
 				</div>
 			</div>
 <?php 
- include('includes/footer.php');
+ include('includes/footer1.php');
 ?>
 		<!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script src="<?php echo base_url('design/admin') ?>/plugins/jquery-validation/dist/jquery.validate.min.js"></script>

@@ -310,7 +310,7 @@
 				</div>
 			</div>
 <?php 
- include('includes/footer.php');
+ include('includes/footer1.php');
 ?>
 <script src="<?php echo base_url('design/admin') ?>/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="<?php echo base_url('design/admin') ?>/js/form-validation.js"></script>

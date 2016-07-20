@@ -247,7 +247,7 @@
 				</div>
 			</div>
 <?php 
- include('includes/footer.php');
+ include('includes/footer1.php');
 ?>    
 		<!-- end: MAIN JAVASCRIPTS -->
 	   <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->

@@ -135,7 +135,7 @@
 				</div>
 			</div>
 <?php 
- include('includes/footer.php');
+ include('includes/footer1.php');
 ?>    
 	   <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
 		<script type="text/javascript" src="<?php echo base_url('design/admin') ?>/plugins/bootbox/bootbox.min.js"></script>

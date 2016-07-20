@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/gbr/';
-$config['base_path'] = $_SERVER['DOCUMENT_ROOT'].'/gbr/';
+$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/gbrlocal/';
+$config['base_path'] = $_SERVER['DOCUMENT_ROOT'].'/gbrlocal/';
 
 /*
 |--------------------------------------------------------------------------
