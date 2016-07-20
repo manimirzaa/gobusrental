@@ -34,12 +34,12 @@ $user_type=$this->session->userdata('user_type');
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo base_url();?>company/add_new_company">
+                                        <a href="#">
                                             <span class="title">Add Company</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo base_url();?>company/manage_companies">
+                                        <a href="#">
                                             <span class="title">Manage Companies</span>
                                         </a>
                                     </li>
@@ -55,11 +55,11 @@ $user_type=$this->session->userdata('user_type');
 							</a>
 							<ul class="sub-menu">
 								<li>
-									<a href="<?php echo base_url();?>fleets/add_new_fleet">
+									<a href="#">
 										<span class="title">Add Fleet</span>
 									</a>
 								</li>
-								<!--<li>
+								<li>
 									<a href="#">
 										<span class="title">Add Fleets in Batch</span>
 									</a>
@@ -73,7 +73,7 @@ $user_type=$this->session->userdata('user_type');
 									<a href="#">
 										<span class="title">Upload Fleet Photos</span>
 									</a>
-								</li>-->
+								</li>
 							</ul>
 						</li>
                         <?php
@@ -92,20 +92,20 @@ $user_type=$this->session->userdata('user_type');
                                         </a>
                                     </li>
                                     <li>
-                                       <a href="<?php echo base_url();?>user/add_new_user">
+                                        <a href="#">
                                             <span class="title">Add User</span>
                                         </a>
                                     </li>
                                     <li>
-                                   <a href="<?php echo base_url();?>user/manage_users">
+                                        <a href="#">
                                             <span class="title">Manage Users</span>
                                         </a>
                                     </li>
-                                    <!--<li>
+                                    <li>
                                     <a href="#">
                                             <span class="title">Add Company Admin</span>
                                     </a>
-                                    </li>-->
+                                    </li>
     
                                 </ul>
                             </li>
