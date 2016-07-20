@@ -335,6 +335,20 @@ $user_type=$this->session->userdata('user_type');
 													   <span class='label label-danger'>Proposal Rejected</span>
 													<?php
 													}
+                                                    elseif($val->status==3)
+													{
+													   if($user_type==1)
+													   {
+														   $status_text="Proposal Sent To User";
+													   }
+													   else
+													   {
+														   $status_text="Proposal Sent";
+													   }
+													?>
+													   <span class='label label-success'><?php echo $status_text;?></span>
+													<?php
+													}
 													?>
                                                 </td>
                                                 <td>

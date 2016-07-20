@@ -569,7 +569,7 @@ class Quotes_model extends CI_Model
 		$user_type=$this->session->userdata('user_type');
 		$company_id=$this->session->userdata('company_id');
 		$quote=$this->get_quote_data($quote_id);
-		if(($quote && $quote->quote_stage==3 && $quote->company_id==$company_id)|| ($quote && $quote->quote_stage==3 && $user_type==1))
+		if(($quote && $quote->quote_stage>=3 && $quote->company_id==$company_id)|| ($quote && $quote->quote_stage>=3 && $user_type==1))
 		{
 			return true;
 		}
@@ -675,7 +675,7 @@ class Quotes_model extends CI_Model
 						  <td>
 							<span class="input-icon">
 							    <input type="hidden" id="proposal_id" name="proposal_id" value="'.$proposal_details->id.'">
-								<input type="number" id="trip_cost" name="trip_cost" class="form-control" value="'.$proposal_details->trip_cost.'">
+								<input type="number" id="trip_cost" name="trip_cost" class="form-control" value="'.$proposal_details->trip_cost.'" style="width:80px;">
 								<i class="fa fa-usd"></i>
 							</span>
 						  </td>
@@ -704,6 +704,48 @@ class Quotes_model extends CI_Model
 					  </tr>
 				</tbody>';
 		$html.='</table>';
+		
+		if($user_type==1 && $proposal_details->status==3)
+		{
+			$html.='<table class="table table-striped table-bordered table-hover table-full-width">';
+		    $html.='<thead>
+					<tr>
+					   <td colspan="12" class="center success"><b>Proposal Admin Pricing</b></td>
+					</tr>
+					<tr>
+					    <th>Trip Cost</th>
+						<th>Deposit Amount %</th>
+						<th>Deposit Amount</th>
+						<th>Final Payment</th>
+					</tr>
+				</thead>';
+				$html.='<tbody>
+						  <tr>
+							  <td>
+								<span class="input-icon">
+									<input type="number" id="trip_cost" name="trip_cost" class="form-control" value="'.$proposal_details->admin_final_trip_cost.'" readonly>
+									<i class="fa fa-usd"></i>
+								</span>
+							  </td>
+							  <td>
+									<input type="number" id="deposit_percentage" name="deposit_percentage" class="form-control" value="'.$proposal_details->admin_final_deposit_percentage.'" readonly>
+							  </td>
+							  <td>
+								<span class="input-icon">
+									<input type="text" id="deposit_amount" name="deposit_amount" class="form-control" value="'.$proposal_details->admin_final_deposit_amount.'" readonly>
+									<i class="fa fa-usd"></i>
+								</span>
+							  </td>
+							  <td>
+								<span class="input-icon">
+									<input type="text" id="final_payment" name="final_payment" class="form-control" value="'.$proposal_details->admin_final_payment.'" readonly>
+									<i class="fa fa-usd"></i>
+								</span>
+							  </td>
+						  </tr>
+					</tbody>';
+			$html.='</table>';
+		}
 		
 		if($user_type==1 && $proposal_details->status==1)
 		{
@@ -788,7 +830,7 @@ class Quotes_model extends CI_Model
 		$this->update_quote_status('4',$quote_id);
 		
 		$quote_details=$this->get_quote_data($quote_id);
-		$proposal_details=$this->get_proposal_data($id);
+		$proposal_details=$this->get_proposal_data($proposal_id);
 		$user_info=$this->User_model->get_user_details($quote_details->user_id);
 		$to_email=$user_info->email;
 		$to_id=$user_info->id;

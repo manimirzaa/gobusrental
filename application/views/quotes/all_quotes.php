@@ -145,6 +145,18 @@ $user_type=$this->session->userdata('user_type');
 													   }
 													   echo "<span class='label label-success'>".$status_text."</span>";
 												   }
+												   elseif($val->quote_stage==4)
+												   {
+													   if($user_type==1)
+													   {
+														   $status_text="Proposal Sent to User";
+													   }
+													   else
+													   {
+														   $status_text="Proposal Sent";
+													   }
+													   echo "<span class='label label-success'>".$status_text."</span>";
+												   }
 												   ?>
                                                 </td>
                                                 <td>
@@ -156,7 +168,7 @@ $user_type=$this->session->userdata('user_type');
                                                 <td>
                                                   <a class="btn btn-green quote_details_btn" id="<?php echo $val->id;?>" href="#panel-config" data-toggle="modal"><i class="fa fa-search"></i> Quote Details</a>
                                                   <?php
-												  if($val->quote_stage==3)
+												  if($val->quote_stage==3 || $val->quote_stage==4)
 												  {
 												  ?>
                                                      <a class="btn btn-info" href="<?php echo $this->config->base_url();?>Quotes/quote_proposal/<?php echo $val->id;?>"><i class="fa fa-search"></i> View Proposals</a>
