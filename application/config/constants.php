@@ -26,7 +26,7 @@ defined('SHOW_DEBUG_BACKTRACE') OR define('SHOW_DEBUG_BACKTRACE', TRUE);
 | always be used to set the mode correctly.
 |
 */
-define('file_path',$_SERVER['DOCUMENT_ROOT'].'/gbr/');
+define('file_path',$_SERVER['DOCUMENT_ROOT'].'/gbrl/');
 
 defined('FILE_READ_MODE')  OR define('FILE_READ_MODE', 0644);
 defined('FILE_WRITE_MODE') OR define('FILE_WRITE_MODE', 0666);
